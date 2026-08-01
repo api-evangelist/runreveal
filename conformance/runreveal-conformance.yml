@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: searched
+source:
+- https://runreveal.com/security
+- https://api.runreveal.com/.well-known/oauth-authorization-server
+- https://docs.runreveal.com/reference/single-sign-on
+standards:
+- id: oauth2
+  conforms: true
+  evidence: RFC 8414 OAuth Authorization Server metadata published; authorizationCode + refreshToken flows with PKCE
+- id: oauth2-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported = [S256, plain]
+- id: rfc8414-oauth-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200
+- id: oidc
+  conforms: false
+  evidence: no /.well-known/openid-configuration (OAuth2 authorization server only)
+- id: saml-sso
+  conforms: true
+  evidence: SAML/OIDC Single Sign-On documented for console login
+- id: scim
+  conforms: true
+  evidence: SCIM user provisioning shipped (changelog Feb 2026)
+- id: rbac
+  conforms: true
+  evidence: role-based access control with custom roles
+- id: sigma
+  conforms: true
+  evidence: Sigma detection rule format supported (sigmalite, sigma_create MCP tool)
+- id: otlp
+  conforms: true
+  evidence: OTLP JSON forwarder source type
+- id: mcp
+  conforms: true
+  evidence: hosted remote + local Model Context Protocol servers
+- id: soc2-type2
+  conforms: true
+  evidence: "SOC 2 Type 2 certified (Trust Center)"
+- id: gdpr
+  conforms: true
+  evidence: GDPR compliant (Trust Center / Terms of Service)
+- id: ccpa
+  conforms: true
+  evidence: CCPA compliant (Terms of Service)

@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.runreveal.com/reference/using-the-cli
+name: runreveal
+description: >-
+  First-party CLI providing a JSON-in / JSON-out interface to the RunReveal API.
+  Designed for interactive use, scripting, and AI-agent integration; human-readable
+  output goes to stderr so stdout stays pipeable.
+latest_version: 2026.7.4
+install:
+- method: homebrew
+  commands:
+  - brew tap runreveal/runreveal
+  - brew install runreveal
+  - brew install runreveal/runreveal/runreveal
+  source: https://github.com/runreveal/homebrew-runreveal
+- method: binary
+  note: Prebuilt darwin/linux amd64/arm64 tarballs on GitHub releases
+  url: https://github.com/runreveal/homebrew-runreveal/releases
+commands:
+- {name: auth,       description: Authentication and profile management (workspaces/deployments)}
+- {name: api,        description: Direct API endpoint access, organized by resource groups}
+- {name: detections, description: Detection management and testing}
+- {name: mcp,        description: Run a local Model Context Protocol server}
+- {name: agent,      description: Interactive AI chat}
+- {name: skill,      description: Agent skill generation}
+- {name: completion, description: Shell completion}
+resource_groups:
+- sources
+- logs
+- detections
+- investigations
+- notifications
+- alerts
+- pipelines
+- workspaces
+notes: >-
+  Supports multiple auth methods, profile switching across workspaces/deployments,
+  and environment-variable configuration for CI/CD.

@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source:
+- https://runreveal.com/changelog
+- https://runrevealstatus.com
+- https://github.com/runreveal/homebrew-runreveal
+versioning:
+  scheme: calver
+  pattern: YYYY.M.patch
+  current: '2026.7.4'
+  docs: https://runreveal.com/changelog
+  notes: CLI/platform releases use calendar versioning (e.g. 2026.7.4).
+changelog: https://runreveal.com/changelog
+status_page: https://runrevealstatus.com
+sla:
+  note: Enterprise SLAs offered on BYO-Cloud and self-hosted tiers (pricing page); no public numeric uptime target published.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No public deprecation/sunset policy found; changelog flags a "Breaking Changes" category.
+notes: >-
+  Status page title "RunReveal Status | Status Page" at runrevealstatus.com
+  (runreveal.statuspage.io redirects there). Changelog is dated and monthly.

@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://runreveal.com/changelog
+scheme: calver
+current_version: '2026.7.4'
+notes: >-
+  Dated monthly product changelog with categories: Features, Improvements,
+  Bug Fixes, Security, Breaking Changes. Recent window captured below.
+entries:
+- date: '2026-07-15'
+  title: 'UEBA, new sources, and a faster investigation workflow'
+  highlights: [User & Entity Behavior Analytics, new data sources, faster investigation workflow]
+- date: '2026-05-31'
+  title: 'Smarter detections, federated search, and agent polish'
+  highlights: [smarter detections, federated search, AI agent improvements]
+- date: '2026-04-28'
+  title: 'AI Investigations, Kubernetes Deployments, + more!'
+  highlights: [AI investigations, Kubernetes self-hosted deployments]
+- date: '2026-02-28'
+  title: 'AI-Powered Agents, Async Queries, SCIM, + more!'
+  highlights: [AI agents, asynchronous queries, SCIM provisioning]
+- date: '2026-01-27'
+  title: 'RBAC, Custom Views, + more!'
+  highlights: [role-based access control, custom views]
+- date: '2025-12-10'
+  title: 'Investigations beta, new Explorer UI, saved queries, and more'
+  highlights: [investigations beta, new Explorer UI, saved queries]
+- date: '2025-10-25'
+  title: 'Custom views, detection testing, & new data sources'
+  highlights: [custom views, detection testing]
+- date: '2025-09-25'
+  title: 'Dashboards, scheduled prompts, pipeline metrics, & more!'
+  highlights: [dashboards, scheduled prompts, pipeline metrics]

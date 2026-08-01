@@ -1,0 +1,52 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/runreveal
+notes: >-
+  RunReveal's public distribution is the `runreveal` CLI (the primary API
+  interface) plus several first-party open-source Go libraries. There is no
+  dedicated per-language API client SDK; the CLI and MCP server are the
+  supported programmatic surfaces.
+packages:
+- language: cli
+  registry: homebrew
+  name: runreveal
+  url: https://github.com/runreveal/homebrew-runreveal
+  install: brew install runreveal/runreveal/runreveal
+  version: 2026.7.4
+  official: true
+  description: RunReveal CLI (JSON-in/JSON-out API interface, local MCP server, agent tooling)
+- language: go
+  registry: pkg.go.dev
+  name: github.com/runreveal/pql
+  url: https://pkg.go.dev/github.com/runreveal/pql
+  install: go get github.com/runreveal/pql
+  official: true
+  description: Pipelined Query Language (PQL) that compiles to SQL; powers RunReveal queries
+- language: go
+  registry: pkg.go.dev
+  name: github.com/runreveal/kawa
+  url: https://pkg.go.dev/github.com/runreveal/kawa
+  install: go get github.com/runreveal/kawa
+  official: true
+  description: High-throughput event-stream processing library powering the reveald daemon
+- language: go
+  registry: pkg.go.dev
+  name: github.com/runreveal/lib
+  url: https://pkg.go.dev/github.com/runreveal/lib
+  install: go get github.com/runreveal/lib
+  official: true
+  description: Shared Go utility packages
+- language: go
+  registry: github
+  name: github.com/runreveal/sigmalite
+  url: https://github.com/runreveal/sigmalite
+  install: go get github.com/runreveal/sigmalite
+  official: true
+  description: Lightweight Go library for parsing and evaluating Sigma detection rules
+- language: go
+  registry: github
+  name: reveald
+  url: https://github.com/runreveal/reveald
+  install: brew install runreveal/runreveal/reveald
+  official: true
+  description: Log-collection agent/daemon that forwards events to the RunReveal platform

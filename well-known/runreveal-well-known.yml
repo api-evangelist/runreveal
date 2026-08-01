@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/* on RunReveal API/site/docs hosts
+hosts:
+- host: https://api.runreveal.com
+  documents:
+  - path: /.well-known/oauth-authorization-server   # RFC 8414
+    status: 200
+    file: runreveal-oauth-authorization-server.json
+  - path: /.well-known/security.txt                  # RFC 9116
+    status: 404
+  - path: /.well-known/openid-configuration          # OIDC discovery
+    status: 404
+  - path: /.well-known/api-catalog                    # RFC 9727
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://www-api.runreveal.com
+  documents:
+  - path: /.well-known/oauth-authorization-server   # RFC 8414 (OAuth issuer host)
+    status: 200
+- host: https://runreveal.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+notes: >-
+  RFC 8414 OAuth Authorization Server metadata is published (served on both
+  api.runreveal.com and www-api.runreveal.com; issuer is www-api.runreveal.com).
+  No security.txt, OIDC discovery, api-catalog, or ai-plugin.json were found.

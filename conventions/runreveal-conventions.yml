@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: searched
+source:
+- https://docs.runreveal.com/api-reference
+- https://docs.runreveal.com/reference/using-the-cli
+- https://api.runreveal.com/.well-known/oauth-authorization-server
+authentication:
+  styles: [oauth2, api-token]
+  detail: >-
+    OAuth2 authorization_code (+ PKCE, refresh_token) via www-api.runreveal.com,
+    or workspace-scoped API tokens in a header. See authentication/runreveal-authentication.yml.
+  ref: authentication/runreveal-authentication.yml
+api_base_url: https://api.runreveal.com
+scoping:
+  model: per-workspace
+  detail: Every request operates within a selected workspace; OAuth scopes/RBAC gate access.
+  ref: scopes/runreveal-scopes.yml
+serialization:
+  request: application/json
+  response: application/json
+  cli_contract: JSON-in / JSON-out; human-readable text to stderr, data to stdout
+versioning:
+  scheme: calver
+  ref: lifecycle/runreveal-lifecycle.yml
+idempotency:
+  supported: unknown
+  note: No documented idempotency-key header found in the public docs; not asserted.
+pagination:
+  supported: unknown
+  note: Not documented on public pages; the API is spec-gated (openapi requires auth).
+error_envelope:
+  note: Public error schema not documented; OpenAPI spec is behind auth.
+rate_limiting:
+  note: Network connectivity / IP allowlisting documented; no public rate-limit header contract found.
+query_languages:
+  - {name: PQL, description: Pipelined Query Language (compiles to SQL), ref: https://pql.dev}
+  - {name: SQL, description: Direct SQL over the security data lake}
+notes: >-
+  Cross-cutting semantics grounded only in RunReveal's public surface. The REST
+  OpenAPI spec is authentication-gated (401), so pagination/idempotency/error-envelope
+  shapes could not be verified and are left unasserted rather than fabricated.

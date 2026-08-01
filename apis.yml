@@ -1,8 +1,28 @@
 aid: runreveal
 name: RunReveal
-description: 'RunReveal is a company surfaced as a portfolio company of costanoa-ventures and added to
-  the API Evangelist network as a stub for enrichment. Sector: security. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  RunReveal is a unified security log management and detection platform that
+  replaces traditional SIEM with a scalable security data lake, AI-powered
+  detection engineering, and natural-language investigations. It ingests and
+  normalizes security logs from 100+ sources (object storage, forwarders, and
+  webhook/API polling), runs detections-as-code (native and Sigma), and lets
+  analysts query with SQL or PQL, build dashboards, and route alerts. RunReveal
+  exposes a REST API, a JSON-in/JSON-out CLI, OAuth-based access with granular
+  workspace scopes, and both hosted-remote and local Model Context Protocol
+  (MCP) servers for AI-agent integration. Backed by Costanoa Ventures.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://runreveal.com/unfurl.png
 url: https://raw.githubusercontent.com/api-evangelist/runreveal/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +32,41 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Security
-apis: []
+- SIEM
+- Security Log Management
+- Detection Engineering
+- Threat Detection
+- Incident Response
+- Observability
+- SQL
+- MCP
+- AI
+apis:
+- name: RunReveal API
+  description: >-
+    REST API for RunReveal — manage sources, detections, pipelines,
+    investigations, dashboards, notifications, agents, and agent skills across a
+    workspace. OAuth2 (authorization_code + PKCE) or workspace API-token auth.
+    The OpenAPI specification is authentication-gated.
+  humanURL: https://docs.runreveal.com/api-reference
+  baseURL: https://api.runreveal.com
+  tags:
+  - Security
+  - Detection
+  - Logs
+  properties:
+  - type: Documentation
+    url: https://docs.runreveal.com/api-reference
+  - type: Authentication
+    url: authentication/runreveal-authentication.yml
+  - type: OAuthScopes
+    url: scopes/runreveal-scopes.yml
+  - type: MCPServer
+    url: mcp/runreveal-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +75,60 @@ maintainers:
 common:
 - type: Website
   url: https://runreveal.com
+- type: DeveloperPortal
+  url: https://docs.runreveal.com
+- type: Documentation
+  url: https://docs.runreveal.com
+- type: APIReference
+  url: https://docs.runreveal.com/api-reference
+- type: GettingStarted
+  url: https://docs.runreveal.com/how-to-guides/onboarding
+- type: Blog
+  url: https://blog.runreveal.com
+- type: GitHubOrganization
+  url: https://github.com/runreveal
+- type: Pricing
+  url: https://runreveal.com/pricing
+- type: SignUp
+  url: https://runreveal.com/signup
+- type: TermsOfService
+  url: https://runreveal.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://runreveal.com/privacy-policy
+- type: StatusPage
+  url: https://runrevealstatus.com
+- type: ChangeLog
+  url: changelog/runreveal-changelog.yml
+- type: TrustCenter
+  url: security/runreveal-trust-center.yml
+- type: Compliance
+  url: https://runreveal.com/security
+- type: Authentication
+  url: authentication/runreveal-authentication.yml
+- type: OAuthScopes
+  url: scopes/runreveal-scopes.yml
+- type: MCPServer
+  url: mcp/runreveal-mcp.yml
+- type: CLI
+  url: cli/runreveal-cli.yml
+- type: Packages
+  url: packages/runreveal-packages.yml
+- type: LLMsTxt
+  url: llms/runreveal-llms.txt
+- type: WellKnown
+  url: well-known/runreveal-well-known.yml
+- type: Conformance
+  url: conformance/runreveal-conformance.yml
+- type: Lifecycle
+  url: lifecycle/runreveal-lifecycle.yml
+- type: Conventions
+  url: conventions/runreveal-conventions.yml
+- type: DomainSecurity
+  url: security/runreveal-domain-security.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 17
+  pass: local-v1

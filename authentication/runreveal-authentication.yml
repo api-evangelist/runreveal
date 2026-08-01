@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: https://api.runreveal.com/.well-known/oauth-authorization-server
+docs: https://docs.runreveal.com/api-reference
+summary:
+  types: [oauth2, apiKey]
+  api_key_in: [header]
+  oauth2_flows: [authorizationCode, refreshToken]
+schemes:
+- name: OAuth2
+  type: oauth2
+  source: https://api.runreveal.com/.well-known/oauth-authorization-server
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www-api.runreveal.com/oauth/authorize
+    tokenUrl: https://www-api.runreveal.com/oauth/token
+    pkce_methods: [S256, plain]
+    scope_count: 37
+  - flow: refreshToken
+    tokenUrl: https://www-api.runreveal.com/oauth/token
+  registration_endpoint: https://www-api.runreveal.com/oauth/client
+  token_endpoint_auth_methods: [client_secret_post, none]
+  used_by: hosted remote MCP server (https://api.runreveal.com/mcp) and OAuth API clients
+- name: ApiToken
+  type: apiKey
+  in: header
+  scheme: bearer-token
+  source: https://docs.runreveal.com/reference/using-the-cli
+  description: >-
+    Workspace-scoped API tokens created in the RunReveal console (scope
+    tokens#create) authenticate the REST API, the CLI (`runreveal auth`), and
+    the local MCP server (`runreveal mcp`). Tokens carry the workspace's RBAC
+    permissions.
+notes: >-
+  RunReveal also supports SAML/OIDC Single Sign-On for console login
+  (https://docs.runreveal.com/reference/single-sign-on) and SCIM user
+  provisioning; those govern human console access rather than API calls.

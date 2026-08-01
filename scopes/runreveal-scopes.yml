@@ -1,0 +1,61 @@
+generated: '2026-07-21'
+method: searched
+source: https://api.runreveal.com/.well-known/oauth-authorization-server
+docs: https://docs.runreveal.com/ai-chat/model-context-protocol
+notes: >-
+  Scopes captured verbatim from RunReveal's RFC 8414 OAuth Authorization Server
+  metadata (scopes_supported). Format is resource#action. OAuth is used for the
+  hosted remote MCP server and for third-party API access; the CLI also supports
+  API-token auth. No published human-readable scope reference page was found, so
+  descriptions below are derived from the resource#action naming.
+schemes:
+- name: OAuth2
+  source: https://api.runreveal.com/.well-known/oauth-authorization-server
+  issuer: https://www-api.runreveal.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www-api.runreveal.com/oauth/authorize
+    tokenUrl: https://www-api.runreveal.com/oauth/token
+    pkce: [S256, plain]
+  - flow: refreshToken
+    tokenUrl: https://www-api.runreveal.com/oauth/token
+  registration_endpoint: https://www-api.runreveal.com/oauth/client
+  token_endpoint_auth_methods: [client_secret_post, none]
+scopes:
+- {scope: 'workspaces#read',        description: Read workspace settings and membership}
+- {scope: 'workspaces#edit',        description: Modify workspace settings and membership}
+- {scope: 'sources#read',           description: Read log sources and their configuration}
+- {scope: 'sources#edit',           description: Create and modify log sources}
+- {scope: 'destinations#read',      description: Read log destinations}
+- {scope: 'destinations#edit',      description: Create and modify log destinations}
+- {scope: 'queries#read',           description: Read saved queries}
+- {scope: 'queries#edit',           description: Create and modify saved queries}
+- {scope: 'filters#read',           description: Read pipeline filters}
+- {scope: 'filters#edit',           description: Create and modify pipeline filters}
+- {scope: 'enrichments#read',       description: Read log enrichments}
+- {scope: 'enrichments#edit',       description: Create and modify log enrichments}
+- {scope: 'investigations#read',    description: Read investigations}
+- {scope: 'investigations#edit',    description: Create and modify investigations}
+- {scope: 'investigations#delete',  description: Delete investigations}
+- {scope: 'notifications#read',     description: Read notification configuration}
+- {scope: 'notifications#edit',     description: Create and modify notification configuration}
+- {scope: 'notifications#send',     description: Send notifications}
+- {scope: 'dashboard_layouts#read', description: Read dashboard layouts}
+- {scope: 'dashboard_layouts#edit', description: Create and modify dashboard layouts}
+- {scope: 'custom_views#read',      description: Read custom log views}
+- {scope: 'custom_views#edit',      description: Create and modify custom log views}
+- {scope: 'custom_roles#read',      description: Read custom RBAC roles}
+- {scope: 'custom_roles#edit',      description: Create and modify custom RBAC roles}
+- {scope: 'agents#read',            description: Read AI agents}
+- {scope: 'agents#edit',            description: Create and modify AI agents}
+- {scope: 'agent_skills#read',      description: Read agent skills}
+- {scope: 'agent_skills#edit',      description: Create and modify agent skills}
+- {scope: 'agent_skills#load',      description: Load and execute agent skills}
+- {scope: 'chat#read',              description: Read AI chat sessions}
+- {scope: 'chat#edit',              description: Create and modify AI chat sessions}
+- {scope: 'topics#read',            description: Read topics}
+- {scope: 'topics#edit',            description: Create and modify topics}
+- {scope: 'params#read',            description: Read parameters}
+- {scope: 'params#edit',            description: Create and modify parameters}
+- {scope: 'tokens#create',          description: Create API tokens}
+- {scope: 'sessions#manage',        description: Manage authentication sessions}

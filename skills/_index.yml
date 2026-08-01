@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: generated
+source: mcp/runreveal-mcp.yml, cli/runreveal-cli.yml
+note: >-
+  Skills grounded in RunReveal's documented MCP tool names and CLI command surface
+  (the REST OpenAPI spec is auth-gated). RunReveal also ships first-party agent-skill
+  tooling (`runreveal skill`, agent_skills_* MCP tools).
+skills:
+- file: runreveal-investigate-logs.md
+  name: Investigate security logs with RunReveal
+  api: mcp/runreveal-mcp.yml
+  operations: [list_tables, get_table_schema, run_query, investigation_create]
+- file: runreveal-create-detection.md
+  name: Create and route a RunReveal detection
+  api: mcp/runreveal-mcp.yml
+  operations: [detections_create, sigma_create, detection_update, notification_send]
