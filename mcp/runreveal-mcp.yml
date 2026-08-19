@@ -8,37 +8,57 @@ servers:
   url: https://api.runreveal.com/mcp
   auth: oauth2
   hosting: hosted
-  description: >-
-    RunReveal's hosted remote MCP server. Connect an MCP client (Claude, Cursor,
-    etc.) to https://api.runreveal.com/mcp and complete OAuth authorization,
-    then select a workspace. Tools are gated by the authorizing OAuth scopes.
+  description: RunReveal's hosted remote MCP server. Connect an MCP client (Claude, Cursor, etc.) to https://api.runreveal.com/mcp
+    and complete OAuth authorization, then select a workspace. Tools are gated by the authorizing OAuth
+    scopes.
 - name: runreveal-local
   transport: http
   command: runreveal mcp
   auth: api-token
   hosting: local
-  description: >-
-    Local MCP server run via the RunReveal CLI (`runreveal mcp`) with API-token
-    auth, for on-premises / air-gapped deployments.
+  description: Local MCP server run via the RunReveal CLI (`runreveal mcp`) with API-token auth, for on-premises
+    / air-gapped deployments.
 tools:
-# ~20+ tools documented; names captured verbatim from the MCP docs page.
-- {name: source_list,            description: List configured log sources}
-- {name: run_query,              description: Run a SQL/PQL query against log data}
-- {name: list_tables,            description: List queryable tables}
-- {name: get_table_schema,       description: Get the schema for a table}
-- {name: detections_create,      description: Create a detection}
-- {name: detection_update,       description: Update a detection}
-- {name: detection_delete,       description: Delete a detection}
-- {name: sigma_create,           description: Create a Sigma-format detection}
-- {name: sigma_update,           description: Update a Sigma-format detection}
-- {name: agents_create,          description: Create an AI agent}
-- {name: agents_update,          description: Update an AI agent}
-- {name: agents_delete,          description: Delete an AI agent}
-- {name: notification_send,      description: Send a notification}
-- {name: investigation_create,   description: Create an investigation}
-- {name: dashboard_graph_create, description: Create a dashboard graph}
-- {name: agent_skills_create,    description: Create an agent skill}
-- {name: agent_skills_update,    description: Update an agent skill}
-notes: >-
-  Tool list is representative (docs state "approximately 20+ tools"); each tool
-  requires matching OAuth scopes or API-token permissions for the workspace.
+- name: source_list
+  description: List configured log sources
+- name: run_query
+  description: Run a SQL/PQL query against log data
+- name: list_tables
+  description: List queryable tables
+- name: get_table_schema
+  description: Get the schema for a table
+- name: detections_create
+  description: Create a detection
+- name: detection_update
+  description: Update a detection
+- name: detection_delete
+  description: Delete a detection
+- name: sigma_create
+  description: Create a Sigma-format detection
+- name: sigma_update
+  description: Update a Sigma-format detection
+- name: agents_create
+  description: Create an AI agent
+- name: agents_update
+  description: Update an AI agent
+- name: agents_delete
+  description: Delete an AI agent
+- name: notification_send
+  description: Send a notification
+- name: investigation_create
+  description: Create an investigation
+- name: dashboard_graph_create
+  description: Create a dashboard graph
+- name: agent_skills_create
+  description: Create an agent skill
+- name: agent_skills_update
+  description: Update an agent skill
+notes: Tool list is representative (docs state "approximately 20+ tools"); each tool requires matching
+  OAuth scopes or API-token permissions for the workspace.
+deployment:
+  mode: remote
+  endpoint: https://api.runreveal.com/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census
