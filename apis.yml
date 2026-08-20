@@ -44,6 +44,18 @@ tags:
 - Observability
 - SQL
 - MCP
+- Artificial Intelligence
+tags_raw:
+- Company
+- Security
+- SIEM
+- Security Log Management
+- Detection Engineering
+- Threat Detection
+- Incident Response
+- Observability
+- SQL
+- MCP
 - AI
 apis:
 - name: RunReveal API
