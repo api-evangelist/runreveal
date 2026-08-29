@@ -10,6 +10,17 @@ description: >-
   exposes a REST API, a JSON-in/JSON-out CLI, OAuth-based access with granular
   workspace scopes, and both hosted-remote and local Model Context Protocol
   (MCP) servers for AI-agent integration. Backed by Costanoa Ventures.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
